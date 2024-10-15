@@ -2,7 +2,7 @@ import flet as ft
 import random
 
 def verificar_adivinanza(page):
-    adivinanza_usuario=int(entrada_numeron.value)
+    adivinanza_usuario=int(entrada_numero.value)
     
     if adivinanza_usuario==numero_Secreto:
         texto_resultado.value="¡felicidades! adivinaste el numero secreto"
@@ -31,7 +31,7 @@ def main(page: ft.Page):
     #Crear los elementos de la interfaz
     titulo=ft.Text("Adivina el número secreto entre 1 y 100",size= 20,color="white")
     entrada_numero=ft.TextField(label="Tu Adivinanza",width=150)
-    boton_adivinar=ft.ElevatedButton("Adivinar")
+    boton_adivinar=ft.ElevatedButton("Adivinar",on_click=lambda e: verificar_adivinanza(page))
     texto_resultado=ft.Text("",color="white")
     
     contenedor_principal=ft.Container(
